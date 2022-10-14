@@ -9,22 +9,4 @@ You can execute the sample with <strong>mvn jetty:run</strong> command and hit <
 ### JSF Versions
 ***
 
-Per default the application uses Mojarra 2.2.x. 
-You can also use other versions with the available maven profiles: myfaces22, myfaces23, myfaces23next, mojarra23
-
-`mvn clean jetty:run -Pmyfaces22`
-
-`mvn clean jetty:run -Pmyfaces23`
-
-`mvn clean jetty:run -Pmyfaces23next`
-
-`mvn clean jetty:run -Pmojarra22`
-
-`mvn clean jetty:run -Pmojarra23`
-
-### Server Port
-***
-
-By default the application runs on port 8080 but if you would like to use a different port you can pass `-Djetty.port=5000` like:
-
-`mvn clean jetty:run -Djetty.port=5000`
+This project is setup to run on WildFly, specifically 26.0.1-Final.
