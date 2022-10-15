@@ -12,7 +12,6 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <wildfly.version>26.0.1.Final</wildfly.version>
     </properties>
 
     <dependencies>
