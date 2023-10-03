@@ -34,4 +34,8 @@ public class TestView implements Serializable {
         ));
     }
 
+    public void testAction(final TestObject o) {
+        System.out.println("Clicked " + o);
+    }
+
 }

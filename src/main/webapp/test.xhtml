@@ -1,23 +1,42 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+  xmlns:jsf="http://xmlns.jcp.org/jsf"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:p="http://primefaces.org/ui"
+>
+  <h:head>
+    <title>PrimeFaces Test</title>
+    <h:outputScript name="test.js" />
+    <h:outputStylesheet name="test.css" />
+  </h:head>
+  <h:body>
+    <h1>#{testView.string}</h1>
+    <h:form id="frmTest">
+        <h2>
+            Chronoline
+        </h2>
+      <p:chronoline value="#{testView.list}" var="row">
+        <p:commandLink disabled="#{row.name eq 'Back in Black'}"
+          action="#{testView.testAction(row)}"
+          process="@this"
+        >
+          <h6 class="mb-0">#{row.name}</h6>
+        </p:commandLink>
+      </p:chronoline>
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-        <h:outputStylesheet name="test.css" />
-    </h:head>
-    <h:body>
-
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
-            
-        </h:form>
-
-    </h:body>
+      <h2>Repeat</h2>
+      <ui:repeat value="#{testView.list}" var="row">
+        <p:commandLink
+          action="#{testView.testAction(row)}"
+          process="@this"
+        >
+          <h6 class="mb-0">#{row.name}</h6>
+        </p:commandLink>
+    </ui:repeat>
+    </h:form>
+  </h:body>
 </html>
